@@ -1,0 +1,88 @@
+\documentclass[11pt]{article} % DOKUMENTKLASSE. Mulighederne er bl.a. article, report, book, memoir                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%          PAKKER DER INDLÆSES         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[a4paper, hmargin={2.8cm, 2.8cm}, vmargin={2.8cm, 2.8cm}]{geometry}      % Geometri-pakke: Styrer bl.a. maginer       %
+\usepackage{amssymb}                       % Matematiske tegn og skrifttyper, bl.a. \mathbb{}                                    %
+\usepackage{dsfont}                        % Anderledes fed skrifttype i matematik-milijøer, som kaldes med $\mathds{}$          %
+\usepackage{amsthm}                        % Opsætning der gør sætninger og beviser nemmere, se amsthdoc.pdf                     %
+\usepackage[ansinew]{inputenc}             % Lidt kodning så der ikke kommer problemer ved visse konverteringer                  %
+\usepackage{amsmath}                       % Matematiske tegn                                                                    %
+%\usepackage[colorlinks=true]{hyperref}     % Referencer som hyperlinks                                                           %
+\usepackage{eurosym}                       % Euro (€) by typing \euro                                                            %
+\def\texteuro{\euro}                       % Definerer €                                                                         %
+%\usepackage{txfonts}                      % Times font                                                                          %
+\usepackage[hang,small]{caption}           % Caption-pakke                                                                       %
+\setlength{\captionmargin}{20pt}           % Sætter caption-margin                                                               %
+\usepackage{listings}                      % Listings. Indsætter kildekode pænt.                                                 %
+\lstset{                                       %                                                                                 %
+basicstyle=\ttfamily\footnotesize,             %          % Sætter basisstilen i listings                                        %
+showstringspaces=false,                        %          % no special string spaces                                             %
+extendedchars=true                             %          % Bogstaver som æ, ø og å                                              %
+}                                              %                                                                                 %
+\usepackage{courier}                    % Courierskrifttype. Slankere skrivemaskineskrift i verbatim og listings                 %
+\usepackage{multicol}                   % Kolonner                                                                               %
+\usepackage[babel, lille]{ku-forside}   % KU-forside med logoer                                                                  %
+\def\HyperLinks{                        % Hyperlinks-pakke, der laver referencer til links og tillader links til www             %
+\usepackage[pdftitle={\TITEL},pdfauthor={\FORFATTER}, %             %  Der er foretaget et lille trick så pakken indlæses efter  %
+pdfsubject={\UNDERTITEL}, linkbordercolor={0.8 0.8 0.8}]{hyperref}} %  titlen defineres.                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MINI-MANUAL TIL ku-forside PAKKEN:                                           %
+%                                                                              %
+% Sprogmuligheder:     da, en                                                  %
+% babel loader babelpakken, med det valgte sprog                               %
+% Fakultetsmuligheder: farma, hum, jur, ku, life, nat, samf, sund, teo         %
+% Farvemuligheder:     sh, farve                                               %
+% Forsidemuligheder: lille, stor, titelside                                    %
+%      titelside er identisk med designet på ku.dk/designmanual                %
+%      lille er giver et lille logo sammen med titlen på den første side       %
+%      stor er giver et stort logo sammen med titlen på den første side        %
+%                                                                              %
+% Default er [da,nat,farve,titelside]                                          %
+%                                                                              %
+% Ex. \usepackage[babel, lille, jur, sh, en]{ku-forside} giver et lille logo i %
+% sorthvid for  juridisk fakultet og loader babelpakken med engelsk som sprog. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     KALIGRAFISK MATEMATIKAlFABET:  \mcal     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n}                  % Henter alfabet                                                 %
+\DeclareSymbolFontAlphabet{\mcal}{rsfscript}                    % Kalder dette alfabet for \mcal                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\arraycolsep{2 pt}  % Sætter kolonneafstanden i tabeller og eqnarrays til 2pt                                          %
+\setcounter{tocdepth}{2} % Dybde af indholdsfortegnelsen, 1 resulterer i at kun sections kommer med, 2 er sectons og subsec. etc.%
+\setcounter{secnumdepth}{0}% Dybde af sektionsnummereringen.                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     TITEL     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titel{Min titel} %
+\undertitel{Min undertitel, fx. faget opgaven skrives i} %
+\opgave{Overspringshandling} % Findes kun under 'titelside' muligheden i ku-forside
+\forfatter{Navn Navnesen} %
+\dato{\today}%
+\vejleder{Doktoren} %  Findes kun under 'titelside'  muligheden i ku-forside
+\HyperLinks % Henter hyperlinks-pakke og sætter pdf-titel mm. til at svare til de just definerede
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     DOKUMENT BEGYNDER     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle % Laver titlen
+%%%%%%%%%%%%% Indholdsfortegnelse %%%%%%%%%%%%%
+\tableofcontents % Indholdsfortegnelse
+%\listoffigures   % Liste over figurer \begin{figure} ... \end{figure}
+%\listoftables    % Liste over tabeller \begin{table} ... \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A}
+\url{http://sast.larslau.dk}
+\subsection{a}
+\subsubsection{a}
+\paragraph{a}
+\subparagraph{a}
+
+\subsection{b}
+\subsection{c}
+\section{B}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     DOKUMENT SLUTTER     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
